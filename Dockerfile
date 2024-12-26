@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.2.2-cuda12.1-cudnn8-runtime as builder
+FROM pytorch/pytorch:2.5.0-cuda12.4-cudnn9-runtime as builder
 
-RUN pip install torch fairscale fire sentencepiece && \
+RUN pip install -U pip && pip install torch fairscale fire sentencepiece && \
     apt update && DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends wget curl vim git awscli && apt clean
